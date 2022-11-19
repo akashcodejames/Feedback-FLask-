@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Feedback</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+<!--<link rel="apple-touch-icon" sizes="57x57" href="A:/gama/favicon/apple-icon-57x57.png">-->
+<!--<link rel="apple-touch-icon" sizes="60x60" href="A:/gama/favicon/apple-icon-60x60.png">-->
+<!--<link rel="apple-touch-icon" sizes="72x72" href="A:/gama/favicon/apple-icon-72x72.png">-->
+<!--<link rel="apple-touch-icon" sizes="76x76" href="A:/gama/favicon/apple-icon-76x76.png">-->
+<!--<link rel="apple-touch-icon" sizes="114x114" href="A:/gama/favicon/apple-icon-114x114.png">-->
+<!--<link rel="apple-touch-icon" sizes="120x120" href="A:/gama/favicon/apple-icon-120x120.png">-->
+<!--<link rel="apple-touch-icon" sizes="144x144" href="A:/gama/favicon/apple-icon-144x144.png">-->
+<!--<link rel="apple-touch-icon" sizes="152x152" href="A:/gama/favicon/apple-icon-152x152.png">-->
+<!--<link rel="apple-touch-icon" sizes="180x180" href="A:/gama/favicon/apple-icon-180x180.png">-->
+<!--<link rel="icon" type="image/png" sizes="192x192"  href="A:/gama/favicon/android-icon-192x192.png">-->
+<!--<link rel="icon" type="image/png" sizes="32x32" href="A:/gama/favicon/favicon-32x32.png">-->
+<!--<link rel="icon" type="image/png" sizes="96x96" href="A:/gama/favicon/favicon-96x96.png">-->
+<!--<link rel="icon" type="image/png" sizes="16x16" href="A:/gama/favicon/favicon-16x16.png">-->
+<!--<link rel="manifest" href="A:/gama/favicon/manifest.json">-->
+<!--<meta name="msapplication-TileColor" content="#ffffff">-->
+<!--<meta name="msapplication-TileImage" content="A:/gama/favicon/ms-icon-144x144.png">-->
+<!--<meta name="theme-color" content="#ffffff">-->
+
+
+
+
+
+<link rel="shortcut icon" type="x-icon" href="{{url_for('static',filename='apple-icon-57x57.png')}}">
+
+<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+
+<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/util.css') }}">
+
+<meta name="robots" content="noindex, follow">
+</head>
+<body>
+<div class="container-contact100">
+<div class="wrap-contact100">
+<form action="/submit" method ="POST">
+<div class="contact100-form validate-form">
+<span class="contact100-form-title">
+Feedback
+</span>
+{% if mess %}
+<p class="james" name="kaisehai">{{mess| safe}} </p>
+{% endif %}
+<div class="wrap-input100 validate-input" data-validate="Name is required">
+<span class="label-input100">Your Name</span>
+<input class="input100" type="text" name="name" placeholder="Enter your name">
+<span class="focus-input100"></span>
+</div>
+<div class="wrap-input100 validate-input" data-validate="Enter valid Roll Number">
+<span class="label-input100">Roll Number</span>
+<input class="input100" type="text" name="roll_no" placeholder="Enter your Roll Number">
+<span class="focus-input100"></span>
+</div>
+<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+<span class="label-input100">Email</span>
+<input class="input100" type="text" name="email" placeholder="Enter your email addess">
+<span class="focus-input100"></span>
+</div>
+<div class="wrap-input100 input100-select">
+<span class="label-input100">Course</span>
+<div>
+<select class="selection-2" name="service">
+<option>Select Course</option>
+<option>Btech(CSE)</option>
+<option>Btech(AI/ML)</option>
+<option>Textile</option>
+</select>
+</div>
+<span class="focus-input100"></span>
+</div>
+<div class="wrap-input100 input100-select">
+<span class="label-input100">Rating</span>
+<div>
+<select class="selection-2" name="rating">
+<option>Select Rating</option>
+<option>1 </option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+</div>
+<span class="focus-input100"></span>
+</div>
+<div class="wrap-input100 validate-input" data-validate="Message is required">
+<span class="label-input100">Feedback</span>
+<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
+<span class="focus-input100"></span>
+</div>
+<div class="container-contact100-form-btn">
+<div class="wrap-contact100-form-btn">
+<div class="contact100-form-bgbtn"></div>
+<button class="contact100-form-btn">
+<span>
+Submit
+<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+</span>
+</button>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div id="dropDownSelect1"></div>
+
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<script src="vendor/animaition/js/animaition.min.js"></script>
+
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="vendor/select2/select2.min.js"></script>
+<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+
+<script src="vendor/countdowntime/countdowntime.js"></script>
+
+<script src="js/main.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7690d4808c2d8817","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
+v
